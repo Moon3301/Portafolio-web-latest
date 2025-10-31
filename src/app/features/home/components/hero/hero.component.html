@@ -1,0 +1,34 @@
+<div class="hero-content">
+  <h1 style="font-size: 60px; margin: 0 auto;">Creando Experiencias Digitales</h1>
+  <span style="color: grey; text-align: center;">Carlos Acevedo, desarrollador fullstack y entusiasta de la tecnología. Construyo aplicaciones limpias, eficientes y centradas en el usuario, desde el concepto hasta el despliegue.</span>
+</div>
+
+<div style="margin-top: 30px;"></div>
+
+<div class="hero-buttons p-2">
+  <button mat-flat-button class="m-1" style="border-radius: 10px; font-weight: bold;">Ver mis Proyectos</button>
+  <button mat-stroked-button class="m-1" style="border-radius: 10px; font-weight: bold;">Contactar</button>
+</div>
+
+<div style="margin-top: 100px;"></div>
+
+<div class="hero-chips">
+  <mat-chip-set
+    cdkDropList
+    cdkDropListOrientation="horizontal"
+  >
+    @for(tech of tecnologies; track tech.id){
+      <mat-chip cdkDrag>{{tech.name}}</mat-chip>
+    }
+  </mat-chip-set>
+
+</div>
+
+<div style="margin-top: 100px;"></div>
+
+<p style="color: grey; display: flex; flex-direction: column; align-items: center; margin-bottom: 50px;">
+  <span>Explorar mis proyectos</span>
+  <mat-icon>arrow_downward</mat-icon>
+</p>
+
+
