@@ -1,0 +1,27 @@
+.projects-content {
+    height: 100vh;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 2rem;
+    margin-top: 50px;
+}
+
+.projects-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.projects-cards {
+    display: flex;
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}

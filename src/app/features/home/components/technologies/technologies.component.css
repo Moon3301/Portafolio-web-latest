@@ -1,0 +1,8 @@
+.swiper-carrousel {
+  z-index: 1000;
+  color: white;
+  background-color: rgba(245, 245, 245, 0.2);
+  border-radius: 20px;
+  --swiper-navigation-color: whitesmoke;
+  width: 100%;
+}

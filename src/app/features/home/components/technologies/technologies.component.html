@@ -1,0 +1,18 @@
+<div >
+    <swiper-container
+      slides-per-view="2"
+      centered-slides="true"
+      navigation="true"
+      loop="true"
+      space-between="spaceBetween"
+      [breakpoints]="swiperBreakpoints"
+    >
+      @for(tech of technologies; track tech.id){
+        <swiper-slide class="border-test ">
+          <img src="img/proj-1.jpg" width="100" alt="">
+        </swiper-slide>
+      }
+
+    </swiper-container>
+</div>
+

@@ -1,0 +1,53 @@
+<div class="projects-content">
+
+    <div class="projects-title">
+        <h1 style="font-size: 40px; margin: 0 auto;">Proyectos destacados</h1>
+        <span style="color: grey; text-align: center; margin-bottom: 3rem;">Una seleccion de mis trabajos recientes. Cada proyecto es una historia de desafios, apredizaje y soluciones creativas.</span>
+        <button mat-stroked-button style="border-radius: 10px; font-weight: bold;">Ver todos los proyectos</button>
+    </div>
+
+    <div class="grid grid-nogutter w-9">
+
+        @for(project of projects; track project.id){
+            <div class="col-4 p-3">
+                <mat-card>
+                    <div matRipple class="m-0 p-0" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
+                        <img mat-card-image width="100%" height="100%" [src]="project.image" [alt]="project.name">
+                    </div>
+                    
+                    <mat-card-content class="m-2">
+                        <h2 style="font-size: 20px; text-align: center;">{{project.name}}</h2>
+                        <p style="font-size: 14px; color: grey;">{{project.description}}</p>
+
+                        <mat-chip-set style="display: flex; align-items: center; justify-content: center;"
+                            cdkDropList
+                            cdkDropListOrientation="horizontal">
+                            @for(tech of project.technologies; track tech){
+                                <mat-chip cdkDrag>{{tech}}</mat-chip>
+                            }
+                        </mat-chip-set>
+                    </mat-card-content>
+                    <mat-card-actions style="margin: 0 auto;">
+                        <button
+                            style="border-radius: 10px; padding: 1rem; margin-right: 0.5rem; font-size: 12px;" 
+                            mat-raised-button 
+                            [routerLink]="['/projects', project.id]"
+                            >Ver proyecto
+                        </button>
+
+                        <button
+                            style="border-radius: 10px; padding: 1rem; margin-left: 0.5rem; font-size: 12px;"
+                            mat-raised-button
+                            [routerLink]="['/projects', project.id]"
+                            >Ver repositorio
+                        </button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+            
+        }
+        
+    </div>
+</div>
+
+
