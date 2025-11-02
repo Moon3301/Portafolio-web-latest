@@ -1,0 +1,47 @@
+[
+    { 
+        "id": 1, 
+        "name": "Angular", 
+        "image": "img/technologies/logo-angular.png" 
+    },
+    { 
+        "id": 2, 
+        "name": "NestJS", 
+        "image": "img/technologies/logo-nestjs.png" 
+    },
+    { 
+        "id": 3, 
+        "name": "NodeJS", 
+        "image": "img/technologies/logo-nodejs.png" 
+    },
+    { 
+        "id": 4, 
+        "name": "Typescript", 
+        "image": "img/technologies/logo-typescript.png" 
+    },
+    { 
+        "id": 5, 
+        "name": "MariaDB", 
+        "image": "img/technologies/logo-mariadb.png" 
+    },
+    { 
+        "id": 6, 
+        "name": "SqlServer", 
+        "image": "img/technologies/logo-sqlserver.png" 
+    },
+    { 
+        "id": 7, 
+        "name": "N8N", 
+        "image": "img/technologies/logo-n8n.png" 
+    },
+    { 
+        "id": 8, 
+        "name": "Nginx", 
+        "image": "img/technologies/logo-nginx.png" 
+    },
+    { 
+        "id": 9, 
+        "name": "Selenium", 
+        "image": "img/technologies/logo-selenium.png" 
+    }
+]

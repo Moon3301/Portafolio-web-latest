@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Swiper } from 'swiper/types';
 import { Technologies } from '../../interfaces/technologies.interface';
+import { HomeService } from '../../services/home.service';
 
 @Component({
   selector: 'home-technologies',
@@ -10,31 +11,20 @@ import { Technologies } from '../../interfaces/technologies.interface';
 })
 export class TechnologiesComponent implements OnInit {
 
+  autoplayConfig = {
+    delay: 2500,                    // Tiempo entre slides (ms)
+    disableOnInteraction: false,    // Continúa después de interacción
+    pauseOnMouseEnter: true,        // Pausa al pasar el mouse
+    reverseDirection: false,        // Dirección inversa
+  };
+
   technologies : Technologies[] = [];
 
-  constructor() { }
+  constructor(private homeService: HomeService) { }
 
-  ngOnInit(): void {
-
-    this.technologies = [
-      {
-        id: 1,
-        name: 'HTML',
-      },
-      {
-        id: 2,
-        name: 'HTML',
-      },
-      {
-        id: 3,
-        name: 'HTML',
-      },
-    ]
-    
-
+  async ngOnInit(): Promise<void> {
+    this.technologies = await this.homeService.getTechnologies();
   }
-
-  
 
   spaceBetween = 10;
 
@@ -45,10 +35,10 @@ export class TechnologiesComponent implements OnInit {
     370:  { slidesPerView: 2 },
     500:  { slidesPerView: 2.5 },
     600:  { slidesPerView: 3 },
-    700:  { slidesPerView: 3.5 },
-    800:  { slidesPerView: 4 },
-    960:  { slidesPerView: 5 },
-    1280: { slidesPerView: 7 }
+    700:  { slidesPerView: 3 },
+    800:  { slidesPerView: 3 },
+    960:  { slidesPerView: 4 },
+    1280: { slidesPerView: 5 }
   };
 
   onProgress(event: CustomEvent<[Swiper, number]>) {

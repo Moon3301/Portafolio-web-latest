@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "Angular"
+    },
+    {
+        "id": 2,
+        "name": "NestJS"
+    },
+    {
+        "id": 3,
+        "name": "Mysql"
+    },
+    {
+        "id": 4,
+        "name": "Nginx"
+    },
+    {
+        "id": 5,
+        "name": "n8n"
+    }
+]

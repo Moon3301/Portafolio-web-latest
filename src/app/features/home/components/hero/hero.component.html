@@ -1,12 +1,12 @@
-<div class="hero-content">
+<div id="hero" class="hero-content">
   <div class="hero-title">
     <h1 style="font-size: 60px; margin: 0 auto; text-align: center;">Creando Experiencias Digitales</h1>
     <span style="color: grey; text-align: center;">Carlos Acevedo, desarrollador fullstack y entusiasta de la tecnología. Construyo aplicaciones limpias, eficientes y centradas en el usuario, desde el concepto hasta el despliegue.</span>
   </div>
 
   <div class="hero-buttons p-2">
-    <button mat-flat-button class="m-1" style="border-radius: 10px; font-weight: bold;">Ver mis Proyectos</button>
-    <button mat-stroked-button class="m-1" style="border-radius: 10px; font-weight: bold;">Contactar</button>
+    <button (click)="scrollToSection($event, 'projects')" mat-flat-button class="m-1" style="border-radius: 10px; font-weight: bold;">Ver mis Proyectos</button>
+    <button (click)="scrollToSection($event, 'contact')" mat-stroked-button class="m-1" style="border-radius: 10px; font-weight: bold;">Contactar</button>
   </div>
 
   <div class="hero-chips">

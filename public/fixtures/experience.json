@@ -1,0 +1,33 @@
+[
+    {
+      "title": "Junior Full Stack Developer",
+      "company": "ACDATA",
+      "date": "2024 - Actualidad",
+      "description": [
+        {
+          "id": 1,
+          "description": "Desarrollo de aplicacion Sala 1"
+        },
+        {
+          "id": 2,
+          "description": "Desarrollo de aplicacion QRC"
+        },
+        {
+          "id": 3,
+          "description": "Desarrollo de aplicacion Chatbot DR SIMI"
+        },
+        {
+          "id": 4,
+          "description": "Desarrollo de aplicacion de presupuestos Santiago Medical"
+        },
+        {
+          "id": 5,
+          "description": "Desarrollo de landing page SalmonSwim"
+        },
+        {
+          "id": 6,
+          "description": "Desarrollo de landing page QRC"
+        }
+      ]
+    }
+]

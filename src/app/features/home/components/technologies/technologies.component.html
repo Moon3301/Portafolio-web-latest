@@ -1,18 +1,33 @@
-<div >
+<div class="technologies-content">
+
+  <div class="technologies-title">
+    <h2 style="font-size: 40px; margin: 0 auto; ">Tecnologías</h2>
+    <span style="color: grey; text-align: center;"> Tecnologías que utilizo para crear mis proyectos</span>
+  </div>
+
+  <div style="width: 57rem;">
     <swiper-container
-      slides-per-view="2"
-      centered-slides="true"
+      [slides-per-view]="2"
       navigation="true"
-      loop="true"
-      space-between="spaceBetween"
+      [loop]="true"
+      [space-between]="spaceBetween"
       [breakpoints]="swiperBreakpoints"
+      [free-mode]="true"
     >
       @for(tech of technologies; track tech.id){
-        <swiper-slide class="border-test ">
-          <img src="img/proj-1.jpg" width="100" alt="">
+        <swiper-slide>
+          <div style="z-index: 1000;" matRipple>
+            <mat-card style="display: flex; justify-content: center; align-items: center; margin: 0.5rem;">
+              <img mat-card-image style="padding: 1rem; object-fit: contain;" [ngSrc]="tech.image" width="150" height="150" alt="" loading="lazy">
+            </mat-card>
+          </div>
         </swiper-slide>
       }
 
     </swiper-container>
+  </div>
+
 </div>
+
+
 

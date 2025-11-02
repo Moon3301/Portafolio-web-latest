@@ -1,20 +1,21 @@
 <mat-toolbar style="font-size: 16px; font-weight: 500;">
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-    <mat-icon>menu</mat-icon>
+  <button mat-button style="font-size: 16px; border-radius: 10px;" (click)="scrollToSection($event, 'hero')">
+    <mat-icon>code</mat-icon>
+    <span style="font-weight: bold;">{{personalInfo.name}}</span>
   </button>
-
-  <span>Carlos Acevedo</span>
+  
   <span class="spacer"></span>
 
-  <button mat-button style="margin-right: 1rem; border-radius: 10px;">Proyectos</button>
-  <button mat-button style="margin-right: 1rem; border-radius: 10px;">Sobre mí</button>
-  <button mat-button style="margin-right: 1rem; border-radius: 10px;">Contacto</button>
+  <button mat-button (click)="scrollToSection($event, 'hero')" style="margin-right: 1rem; border-radius: 10px;">Home</button>
+  <button mat-button (click)="scrollToSection($event, 'projects')" style="margin-right: 1rem; border-radius: 10px;">Proyectos</button>
+  <button mat-button (click)="scrollToSection($event, 'about')" style="margin-right: 1rem; border-radius: 10px;">Sobre mí</button>
+  <button mat-button (click)="scrollToSection($event, 'contact')" style="margin-right: 1rem; border-radius: 10px;">Contacto</button>
 
-  <button mat-mini-fab style="margin-right: 0.5rem;" aria-label="Example icon-button with heart icon">
-    <mat-icon>code</mat-icon>
+  <button (click)="goToGithub()" mat-mini-fab style="margin-right: 0.5rem;" aria-label="Example icon-button with heart icon">
+    <img ngSrc="img/logo-github.png" width="24" height="24" priority>
   </button>
-  <button mat-mini-fab style="margin-left: 0.5rem;" aria-label="Example icon-button with share icon">
-    <mat-icon>alternate_email</mat-icon>
+  <button (click)="goToLinkedin()" mat-mini-fab style="margin-left: 0.5rem;" aria-label="Example icon-button with share icon">
+    <img ngSrc="img/logo-linkedin.png" width="24" height="24" priority>
   </button>
 
 </mat-toolbar>

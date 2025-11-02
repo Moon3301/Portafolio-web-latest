@@ -1,5 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 
+/* --------------------------------------------- */
+/*                   SWIPPER                     */
+/* --------------------------------------------- */
+@import "swiper/css";             /* núcleo */
+@import "swiper/css/navigation";  /* flechas */
+@import "swiper/css/pagination";  /* puntitos, opcional */
+@import 'swiper/css/autoplay';
+
+/* --------------------------------------------- */
+/*                   HTML                        */
+/* --------------------------------------------- */
 html, body { height: 100%; }
 body {
   margin: 0;
@@ -22,6 +33,11 @@ body {
 
 .border-test {
   border: 1px solid white;
+}
+
+swiper-container::part(button-next),
+swiper-container::part(button-prev) {
+  color: white;
 }
 
 

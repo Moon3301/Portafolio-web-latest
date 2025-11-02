@@ -1,0 +1,70 @@
+[
+    {
+        "id": 1,
+        "name": "SALA 1",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+        "image": "img/projects/logo-sala1.png",
+        "link": "https://via.placeholder.com/150",
+        "technologies": ["Angular", "NestJS", "MariaDB"]
+    },
+    {
+        "id": 2,
+        "name": "QR CLEANER",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+        "image": "img/projects/logo-qrc.png",
+        "link": "https://via.placeholder.com/150",
+        "technologies": [
+            "Angular", 
+            "NestJS", 
+            "MariaDB"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "SALMON SWIM",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+        "image": "img/projects/logo-salmonswim.png",
+        "link": "https://via.placeholder.com/150",
+        "technologies": [
+            "Angular", 
+            "NestJS", 
+            "MariaDB"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "SALA 1",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+        "image": "img/projects/logo-sala1.png",
+        "link": "https://via.placeholder.com/150",
+        "technologies": [
+            "Angular", 
+            "NestJS", 
+            "MariaDB"
+        ]
+    },
+    {
+        "id": 5,
+        "name": "SALA 1",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+        "image": "img/projects/logo-sala1.png",
+        "link": "https://via.placeholder.com/150",
+        "technologies": [
+            "Angular", 
+            "NestJS", 
+            "MariaDB"
+        ]
+    },
+    {
+        "id": 6,
+        "name": "SALA 1",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+        "image": "img/projects/logo-sala1.png",
+        "link": "https://via.placeholder.com/150",
+        "technologies": [
+            "Angular", 
+            "NestJS", 
+            "MariaDB"
+        ]
+    }
+]

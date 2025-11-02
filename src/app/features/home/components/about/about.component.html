@@ -1,21 +1,74 @@
-<div class="about-content">
+<div id="about" class="about-content">
     <div class="about-title">
         <h1 style="font-size: 40px; margin: 0 auto;">Sobre mí</h1>
-        <span style="color: grey; text-align: center; margin-top: 2rem">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. 
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. 
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
-        
-        
+        <span style="color: grey;">
+            Una breve descripción de mi desarrollo laboral, educación y experiencia.
         </span>
+    </div>
+
+    <div class="about-description">
+        <mat-card>
+            <mat-card-content>
+                <span style="color: rgb(190, 190, 190);"> 
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+                </span>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div class="about-experience">
+        <h1>Experiencia laboral</h1>
+        <mat-card style="width: 100%;">
+            <mat-card-content>
+                    <mat-list>
+                    @for(experience of experiences; track $index) {
+                        <mat-list-item style="height: 280px;">
+                            <mat-icon matListItemIcon>work</mat-icon>
+                            <div matListItemTitle>{{experience.title}}. {{experience.company}}</div>
+                            <div matListItemLine> {{experience.date}}</div>
+                            <div matListItemLine class="surface-overlay">
+                                <div class=" m-0 p-0">
+                                    <h3 style="font-size: 16px;">Logros:</h3>
+                                    <ul class="list-disc">
+                                        @for(description of experience.description; track $index) {
+                                            <li class="p-1">{{description.description}}</li>
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                        </mat-list-item>
+                    }
+                </mat-list>
+            </mat-card-content>
+        </mat-card>
+        
+    </div>
+
+    <div class="about-experience-personal">
+
+        <h1>Desarrollos personales</h1>
+        
+        <div class="grid grid-nogutter w-12">
+            
+                @for(project of personalProjects; track $index) {
+                    <div class="col-2">
+                        <mat-card matRipple style="width: 150px; height: 150px;">
+                            <mat-card-content>
+                                test
+                                asdas
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                }
+            
+        </div>
+        
+
     </div>
     
 </div>

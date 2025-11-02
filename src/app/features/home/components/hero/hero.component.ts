@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { Technologies } from '../../interfaces/technologies.interface';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { PreferTechnologies } from '../../interfaces/technologies.interface';
+import { HomeService } from '../../services/home.service';
 
 @Component({
   selector: 'home-hero',
@@ -7,29 +8,41 @@ import { Technologies } from '../../interfaces/technologies.interface';
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.css'
 })
-export class HeroComponent {
+export class HeroComponent implements OnInit{
 
-  tecnologies: Technologies[] = [
-    {
-      id: 1,
-      name: 'Angular',
-    },
-    {
-      id: 2,
-      name: 'Node.js',
-    },
-    {
-      id: 3,
-      name: 'NestJS',
-    },
-    {
-      id: 4,
-      name: 'Typescript',
-    },
-    {
-      id: 5,
-      name: 'Mysql',
-    }
-  ]
+  isScrolled = false;
+
+  tecnologies: PreferTechnologies[] = [];
+
+  constructor(private homeService: HomeService){}
+
+  async ngOnInit(): Promise<void> {
+    this.tecnologies = await this.homeService.getPreferTechnologies();
+  }
+
+  scrollToSection(event: Event, sectionId: string) {
+
+    event.preventDefault();
+
+    const doScroll = () => {
+      // pequeño delay para asegurar que el DOM se renderice si hubo navegación
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const headerHeight = 70;
+          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+          window.scrollTo({ top: elementPosition - headerHeight, behavior: 'smooth' });
+        }
+      });
+    };
+
+    doScroll();
+
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.isScrolled = window.scrollY > 50;
+  }
 
 }
