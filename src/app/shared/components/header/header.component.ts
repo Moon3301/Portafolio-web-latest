@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit  } from '@angular/core';
 import { HomeService } from '../../../features/home/services/home.service';
 import { PersonalInfo } from '../../../features/home/interfaces/personal-info.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'shared-header',
@@ -21,7 +22,10 @@ export class HeaderComponent implements OnInit {
     github: ''
   };
 
-  constructor( private homeService: HomeService ){}
+  constructor( 
+    private homeService: HomeService,
+    private router: Router
+   ){}
   
   ngOnInit(): void {
     this.homeService.getPersonalInfo().then((personalInfo) => {
@@ -46,7 +50,11 @@ export class HeaderComponent implements OnInit {
       });
     };
 
-    doScroll();
+    if (this.router.url !== '/') {
+      this.router.navigate(['/'], { fragment: sectionId }).then(() => doScroll());
+    } else {
+      doScroll();
+    }
 
   }
 

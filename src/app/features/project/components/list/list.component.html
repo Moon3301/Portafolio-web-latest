@@ -1,0 +1,31 @@
+<div class="grid grid-nogutter">
+    @for( project of projects; track $index) {
+        <div class="col-4">
+            <div style="padding: 0.5rem; display: flex; justify-content: center; align-items: center;">
+                <mat-card matRipple (click)="goToProject(project)">
+                    <img mat-card-image [ngSrc]="project.image" width="200" height="150" [alt]="project.name" style="object-fit: contain; margin: 0 auto; padding: 0.5rem;">
+                    <mat-card-content>
+                        <h1 style="font-size: 20px;"> {{project.name}} </h1>
+                        <span style="color: grey;"> {{project.description}} </span>
+
+                        <mat-chip-set style="display: flex; align-items: center; justify-content: center; margin-top: 1rem;"
+                            cdkDropList
+                            cdkDropListOrientation="horizontal">
+                            @for(tech of project.technologies; track tech){
+                                <mat-chip cdkDrag>{{tech}}</mat-chip>
+                            }
+                        </mat-chip-set>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+            
+        </div>
+    }
+</div>
+
+<div class="projects-paginator">
+
+
+</div>
+
+       

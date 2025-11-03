@@ -3,7 +3,7 @@
     <div class="projects-title">
         <h1 style="font-size: 40px; margin: 0 auto;">Proyectos destacados</h1>
         <span style="color: grey; text-align: center; margin-bottom: 3rem;">Una seleccion de mis trabajos recientes. Cada proyecto es una historia de desafios, apredizaje y soluciones creativas.</span>
-        <button mat-stroked-button style="border-radius: 10px; font-weight: bold;">Ver todos los proyectos</button>
+        <button (click)="goToProjects()" mat-stroked-button style="border-radius: 10px; font-weight: bold;">Ver todos los proyectos</button>
     </div>
 
     <div class="grid grid-nogutter w-9">
@@ -31,7 +31,7 @@
                         <button
                             style="border-radius: 10px; padding: 1rem; margin-right: 0.5rem; font-size: 13px;" 
                             mat-raised-button 
-                            [routerLink]="['/projects', project.id]"
+                            (click)="goToProject(project)"
                             >Ver proyecto
                         </button>
 

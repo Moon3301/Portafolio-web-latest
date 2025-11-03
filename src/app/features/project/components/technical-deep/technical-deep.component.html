@@ -1,0 +1,40 @@
+<div class="technical-deep">
+    <h1>Technical Deep</h1>
+
+    <mat-accordion style="display: flex; flex-direction: column; gap: 1rem;">
+        <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+            <mat-expansion-panel-header>
+            <mat-panel-title> Self aware panel </mat-panel-title>
+            <mat-panel-description>
+                Currently I am {{panelOpenState() ? 'open' : 'closed'}}
+            </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>I'm visible because I am open</p>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+            <mat-expansion-panel-header>
+            <mat-panel-title> Self aware panel </mat-panel-title>
+            <mat-panel-description>
+                Currently I am {{panelOpenState() ? 'open' : 'closed'}}
+            </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>I'm visible because I am open</p>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+    <div style="display: flex; justify-content: center; align-items: center; gap: 5rem; margin-top: 5rem;">
+        <button mat-flat-button style="border-radius: 10px; width: 10rem;">
+            Ver Demo
+        </button>
+
+        <button mat-stroked-button style="border-radius: 10px; width: 10rem;">
+            Ver Código
+            
+        </button>
+    </div>
+
+    
+
+
+</div>
