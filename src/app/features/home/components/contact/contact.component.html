@@ -1,89 +1,87 @@
-<div id="contact" class="contact-content">
-    <div class="grid grid-nogutter w-10">
-        <div class="col-6 p-4" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; ">
-            <div class="text-center">
-                <h1 style="font-size: 24px;">Listo para construir algo increible juntos?</h1>
-                <span style="color: grey; font-size: 14px;">Estoy abierto a nuevas oportunidades y desafios. No dudes en contactarme para hablar sobre tu proyecto.</span>
+<div id="contact" class="contact-content animate-fade-in">
+    <div class="contact-grid">
+
+        <!-- Left Column: Intro & Form -->
+        <div class="contact-intro animate-slide-in-right">
+            <div class="contact-title">
+                <h1>¿Listo para construir algo increíble juntos?</h1>
+                <span>Estoy abierto a nuevas oportunidades y desafíos. No dudes en contactarme para hablar sobre tu
+                    proyecto.</span>
             </div>
 
-            <div class="w-12" style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 2rem;">
-                
-                <button mat-stroked-button class="w-10" style="border-radius: 10px;">
-                    <mat-icon>github</mat-icon>
+            <div class="social-buttons">
+                <button mat-stroked-button class="btn-social" (click)="openLink(personalInfo().github)">
+                    <mat-icon>code</mat-icon>
                     <span>GitHub</span>
                 </button>
-            
-                <button mat-stroked-button class="w-10" style="border-radius: 10px;">
-                    <mat-icon>linkedin</mat-icon>
+                <button mat-stroked-button class="btn-social" (click)="openLink(personalInfo().linkedin)">
+                    <mat-icon>work</mat-icon>
                     <span>LinkedIn</span>
                 </button>
-                
             </div>
 
-            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem;">
-                <h1 style="font-size: 24px; text-align: center;"> Hablemos</h1>
+            <div class="contact-form-container">
+                <h2 class="form-title">Hablemos</h2>
+                <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
 
-                <form class="grid grid-nogutter w-12" >
+                    <mat-form-field appearance="outline" class="w-full mb-3">
+                        <mat-label>Nombre</mat-label>
+                        <input matInput formControlName="name" placeholder="Tu nombre">
+                        <mat-error *ngIf="contactForm.get('name')?.hasError('required')">El nombre es
+                            requerido</mat-error>
+                        <mat-error *ngIf="contactForm.get('name')?.hasError('minlength')">Mínimo 3
+                            caracteres</mat-error>
+                    </mat-form-field>
 
-                    <div class="col-12">
-                        <mat-form-field class="w-12" appearance="outline">
-                            <mat-label>Nombre</mat-label>
-                            <input matInput placeholder="Nombre">
-                        </mat-form-field>
-                    </div>
+                    <mat-form-field appearance="outline" class="w-full mb-3">
+                        <mat-label>Correo</mat-label>
+                        <input matInput formControlName="email" placeholder="tucorreo@ejemplo.com">
+                        <mat-error *ngIf="contactForm.get('email')?.hasError('required')">El correo es
+                            requerido</mat-error>
+                        <mat-error *ngIf="contactForm.get('email')?.hasError('email')">Correo inválido</mat-error>
+                    </mat-form-field>
 
-                    <div class="col-12">
-                        <mat-form-field class="w-12" appearance="outline">
-                            <mat-label>Correo</mat-label>
-                            <input matInput placeholder="Correo">
-                        </mat-form-field>
-                    </div>
+                    <mat-form-field appearance="outline" class="w-full mb-3">
+                        <mat-label>Mensaje</mat-label>
+                        <textarea matInput formControlName="message" rows="4"
+                            placeholder="Cuéntame sobre tu proyecto..."></textarea>
+                        <mat-error *ngIf="contactForm.get('message')?.hasError('required')">El mensaje es
+                            requerido</mat-error>
+                        <mat-error *ngIf="contactForm.get('message')?.hasError('minlength')">Mínimo 10
+                            caracteres</mat-error>
+                    </mat-form-field>
 
-                    <div class="col-12">
-                        <mat-form-field class="w-12" appearance="outline">
-                            <mat-label>Mensaje</mat-label>
-                            <textarea matInput placeholder="Mensaje"></textarea>
-                        </mat-form-field>
-                    </div>
-
-                    <div class="col-12">
-                        <button mat-flat-button style="border-radius: 10px; width: 100%;" >
-                            Enviar
-                        </button>
-                    </div>
-
+                    <button mat-flat-button class="btn-submit" type="submit" [disabled]="contactForm.invalid">
+                        Enviar Mensaje
+                    </button>
                 </form>
             </div>
-
         </div>
 
-        <div class="col-6 p-4" style="display: flex; flex-direction: column; align-items: center;  gap: 1rem;">
-
-            <div class="text-center" >
-                <h1 style="font-size: 24px;"> Contacto</h1>
-                <span style="color: #666; font-size: 14px;">
-                    Estoy aqui para ayudarte en todo lo que necesites.
-                </span>
+        <!-- Right Column: Contact Info -->
+        <div class="contact-info animate-slide-up delay-200">
+            <div class="contact-title">
+                <h1>Contacto Directo</h1>
+                <span>Estoy aquí para ayudarte en todo lo que necesites.</span>
             </div>
 
-            <mat-list style="width: 100%; margin: 0 auto;">
-                <mat-list-item matRipple >
-                    <mat-icon matListItemIcon>phone</mat-icon>
-                    <span matListItemTitle>+569 88943613</span>
-                </mat-list-item>
-                <mat-list-item matRipple >
-                    <mat-icon matListItemIcon>email</mat-icon>
-                    <span matListItemTitle>carlos_db_16&#64;live.cl</span>
-                </mat-list-item>
+            <div class="info-list">
+                <div class="info-item">
+                    <mat-icon>phone</mat-icon>
+                    <span>{{personalInfo().phone}}</span>
+                </div>
 
-                <mat-list-item matRipple>
-                    <mat-icon matListItemIcon>attach_file</mat-icon>
-                    <a matListItemTitle href="" download>Mi CV</a>
-                </mat-list-item>
-                
-                
-            </mat-list>
+                <div class="info-item">
+                    <mat-icon>email</mat-icon>
+                    <span>{{personalInfo().email}}</span>
+                </div>
+
+                <a [href]="personalInfo().cv" download class="info-item" style="text-decoration: none;">
+                    <mat-icon>description</mat-icon>
+                    <span>Descargar CV</span>
+                </a>
+            </div>
         </div>
+
     </div>
 </div>
-

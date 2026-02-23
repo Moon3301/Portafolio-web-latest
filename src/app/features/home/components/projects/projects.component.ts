@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, signal } from '@angular/core';
 import { Project } from '../../interfaces/projects.interface';
 import { HomeService } from '../../services/home.service';
 import { Router } from '@angular/router';
@@ -7,27 +7,34 @@ import { Router } from '@angular/router';
   selector: 'home-projects',
   standalone: false,
   templateUrl: './projects.component.html',
-  styleUrl: './projects.component.css'
+  styleUrl: './projects.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProjectsComponent implements OnInit {
 
-  projects: Project[] = [];
+  projects = signal<Project[]>([]);
 
   constructor(
     private homeService: HomeService,
     private router: Router
-  ){}
+  ) { }
 
   async ngOnInit() {
-    this.projects = await this.homeService.getProjects();
+    const projectsData = await this.homeService.getProjects();
+    this.projects.set(projectsData);
   }
 
-  goToProjects(){
+  goToProjects() {
     this.router.navigate(['/project/list']);
   }
 
-  goToProject(project: Project){
+  goToProject(project: Project) {
     this.router.navigate(['/project', project.id]);
   }
 
+  goToRepo(project: Project, event: Event) {
+    event.stopPropagation();
+    const link = project.github;
+    window.open(link, '_blank');
+  }
 }

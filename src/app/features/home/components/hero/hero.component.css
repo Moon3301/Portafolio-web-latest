@@ -1,30 +1,174 @@
-.hero-content{
-  max-height: 100vh; 
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
-  justify-content: center; 
-  gap: 2rem;
+.hero-content {
+  position: relative;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xl);
+  padding: var(--spacing-md);
+  text-align: center;
 }
 
 .hero-title {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 60%;
-  margin: 0 auto;
-  text-align: center;
+  font-size: var(--font-size-lg);
+  max-width: 100%;
+}
+
+.hero-subtitle {
+  width: 80%;
 }
 
 .hero-buttons {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+  border-radius: 50px !important;
+  padding: 0.5rem 2rem !important;
+  font-weight: 600 !important;
+  transition: transform var(--transition-fast) !important;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+  border-color: var(--text-color) !important;
+  color: var(--text-color) !important;
+  border-radius: 50px !important;
+  padding: 0.5rem 2rem !important;
+  font-weight: 600 !important;
 }
 
 .hero-chips {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: var(--spacing-lg);
 }
 
+.scroll-indicator {
+  color: var(--text-secondary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: var(--font-size-sm);
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-10px);
+  }
+
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* ── Contenedor del icono animado ───────────────────────────────────────── */
+.img-animation-code {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+}
+
+/* Anillo de brillo exterior (pulsante) */
+.glow-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(108, 99, 255, 0.5);
+  background: radial-gradient(circle,
+      rgba(108, 99, 255, 0.08) 0%,
+      rgba(0, 210, 252, 0.04) 60%,
+      transparent 100%);
+  box-shadow:
+    0 0 40px rgba(108, 99, 255, 0.25),
+    inset 0 0 40px rgba(0, 210, 252, 0.1);
+}
+
+/* Wrapper del SVG (es el que flota) */
+.code-icon-wrapper {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SVG del icono </> */
+.code-svg {
+  width: 180px;
+  height: 90px;
+  filter: drop-shadow(0 0 10px rgba(108, 99, 255, 0.6));
+  overflow: visible;
+}
+
+/* Partículas flotantes */
+.particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.particle:nth-child(1) {
+  background: #6C63FF;
+  box-shadow: 0 0 8px #6C63FF;
+}
+
+.particle:nth-child(2) {
+  background: #00D2FC;
+  box-shadow: 0 0 8px #00D2FC;
+  width: 6px;
+  height: 6px;
+}
+
+.particle:nth-child(3) {
+  background: #FF6584;
+  box-shadow: 0 0 8px #FF6584;
+  width: 5px;
+  height: 5px;
+}
+
+.particle:nth-child(4) {
+  background: #00D2FC;
+  box-shadow: 0 0 8px #00D2FC;
+  width: 7px;
+  height: 7px;
+}
+
+.particle:nth-child(5) {
+  background: #6C63FF;
+  box-shadow: 0 0 8px #6C63FF;
+  width: 4px;
+  height: 4px;
+}

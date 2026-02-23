@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit  } from '@angular/core';
+import { Component, HostListener, OnInit, ChangeDetectionStrategy, signal } from '@angular/core';
 import { HomeService } from '../../../features/home/services/home.service';
 import { PersonalInfo } from '../../../features/home/interfaces/personal-info.interface';
 import { Router } from '@angular/router';
@@ -7,39 +7,38 @@ import { Router } from '@angular/router';
   selector: 'shared-header',
   standalone: false,
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrl: './header.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent implements OnInit {
 
-  isScrolled = false;
+  isScrolled = signal(false);
+  isMobileMenuOpen = signal(false);
 
-  personalInfo:PersonalInfo = {
+  personalInfo = signal<PersonalInfo>({
     name: '',
     phone: '',
     email: '',
     cv: '',
     linkedin: '',
     github: ''
-  };
+  });
 
-  constructor( 
+  constructor(
     private homeService: HomeService,
     private router: Router
-   ){}
-  
-  ngOnInit(): void {
-    this.homeService.getPersonalInfo().then((personalInfo) => {
-      this.personalInfo = personalInfo;
-    });
-    
+  ) { }
+
+  async ngOnInit(): Promise<void> {
+    const info = await this.homeService.getPersonalInfo();
+    this.personalInfo.set(info);
   }
 
   scrollToSection(event: Event, sectionId: string) {
-
     event.preventDefault();
+    this.isMobileMenuOpen.set(false);
 
     const doScroll = () => {
-      // pequeño delay para asegurar que el DOM se renderice si hubo navegación
       setTimeout(() => {
         const element = document.getElementById(sectionId);
         if (element) {
@@ -50,25 +49,27 @@ export class HeaderComponent implements OnInit {
       });
     };
 
-    if (this.router.url !== '/') {
-      this.router.navigate(['/'], { fragment: sectionId }).then(() => doScroll());
+    if (this.router.url !== '/home') {
+      this.router.navigate(['/home']).then(() => doScroll());
     } else {
       doScroll();
     }
-
   }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    this.isScrolled = window.scrollY > 50;
+    this.isScrolled.set(window.scrollY > 50);
+  }
+
+  toggleMenu() {
+    this.isMobileMenuOpen.update(v => !v);
   }
 
   goToGithub() {
-    window.open(this.personalInfo.github, '_blank');
+    window.open(this.personalInfo().github, '_blank');
   }
 
   goToLinkedin() {
-    window.open(this.personalInfo.linkedin, '_blank');
+    window.open(this.personalInfo().linkedin, '_blank');
   }
-
 }

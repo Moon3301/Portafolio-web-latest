@@ -1,7 +1,111 @@
 .contact-content {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: var(--spacing-xl);
+    padding: var(--spacing-2xl) var(--spacing-sm);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+    width: 100%;
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+}
+
+.contact-intro {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.contact-title h1 {
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-color);
+}
+
+.contact-title span {
+    color: var(--text-secondary-color);
+    font-size: var(--font-size-lg);
+}
+
+.social-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.btn-social {
+    flex: 1;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    color: var(--text-color) !important;
+    padding: 1.5rem !important;
+    border-radius: 12px !important;
+    transition: all var(--transition-fast) !important;
+}
+
+.btn-social:hover {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border-color: var(--primary-color) !important;
+    transform: translateY(-2px);
+}
+
+.contact-form-container {
+    background-color: var(--surface-color);
+    padding: var(--spacing-xl);
+    border-radius: 24px;
+    box-shadow: var(--shadow-lg);
+}
+
+.form-title {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-xl);
+    background-color: rgba(255, 255, 255, 0.02);
+    border-radius: 24px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    border-radius: 12px;
+    transition: background-color var(--transition-fast);
+    color: var(--text-color);
+}
+
+.info-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.info-item mat-icon {
+    color: var(--primary-color);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 1.5rem !important;
+    border-radius: 12px !important;
+    font-size: var(--font-size-lg) !important;
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    margin-top: var(--spacing-md);
 }

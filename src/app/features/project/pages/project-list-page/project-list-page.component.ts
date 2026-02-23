@@ -16,7 +16,8 @@ export class ProjectListPageComponent implements OnInit{
   personalProjects: PersonalProject[] = [];
 
   constructor(
-    private projectService: ProjectService
+    private projectService: ProjectService,
+    private router: Router
   
   ) { }
 
@@ -45,6 +46,9 @@ export class ProjectListPageComponent implements OnInit{
 
   get getPersonalProjects(): PersonalProject[] {
     return this.projectService.getPersonalProjects;
+  }
+  goToProjects() {
+    this.router.navigate(['/projects']);
   }
 
 }

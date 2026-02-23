@@ -1,6 +1,28 @@
-<main class="main-content">
-    <project-detail></project-detail>
-    <project-overview></project-overview>
-    <project-gallery></project-gallery>
-    <project-technical-deep></project-technical-deep>
-</main>
+<div class="content">
+
+    <div class="back-button">
+        <button (click)="goToProjects()" mat-stroked-button style="border-radius: 10px; margin-top: 8%;">
+            <mat-icon style="margin: 0 auto;">arrow_back</mat-icon>
+        </button>
+    </div>
+
+    <main class="main-content">
+        
+        <project-detail [hero]="projectDetail?.hero"></project-detail>
+
+        <project-overview 
+            [overview]="projectDetail?.overview" 
+            [technologies]="project?.technologies"
+        ></project-overview>
+
+        <project-gallery [gallery]="projectDetail?.gallery"></project-gallery>
+
+        <project-technical-deep
+            [technicalDeep]="projectDetail?.technicalDeep"
+            [link]="project?.link"
+            [github]="project?.github"
+        ></project-technical-deep>
+
+    </main>
+</div>
+

@@ -9,7 +9,17 @@ import { Component, OnInit } from '@angular/core';
 export class HomePageComponent implements OnInit{
 
   ngOnInit(): void {
-    window.scrollTo(0, 0);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+
+  scrollToTop(){
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   }
 
 }

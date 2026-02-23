@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ProjectHero } from '../../../home/interfaces/projects.interface';
 
 @Component({
   selector: 'project-detail',
@@ -7,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './detail.component.css'
 })
 export class DetailComponent {
+
+  @Input() 
+  hero: ProjectHero | undefined;
 
 }

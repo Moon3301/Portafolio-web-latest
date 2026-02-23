@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'project-gallery',
@@ -7,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './gallery.component.css'
 })
 export class GalleryComponent {
+
+  @Input() 
+  gallery: string[] | undefined;
 
 }

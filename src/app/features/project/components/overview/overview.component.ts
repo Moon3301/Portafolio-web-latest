@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ProjectOverview } from '../../../home/interfaces/projects.interface';
 
 @Component({
   selector: 'project-overview',
@@ -7,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './overview.component.css'
 })
 export class OverviewComponent {
+
+  @Input() overview: ProjectOverview[] | undefined;
+  @Input() technologies: string[] | undefined;
 
 }

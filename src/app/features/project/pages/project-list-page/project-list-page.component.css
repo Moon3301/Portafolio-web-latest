@@ -1,0 +1,6 @@
+.back-button {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 1rem;
+}

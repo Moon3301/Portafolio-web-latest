@@ -1,30 +1,78 @@
-<div id="hero" class="hero-content">
-  <div class="hero-title">
-    <h1 style="font-size: 60px; margin: 0 auto; text-align: center;">Creando Experiencias Digitales</h1>
-    <span style="color: grey; text-align: center;">Carlos Acevedo, desarrollador fullstack y entusiasta de la tecnología. Construyo aplicaciones limpias, eficientes y centradas en el usuario, desde el concepto hasta el despliegue.</span>
+<div id="hero" class="hero-content animate-fade-in">
+
+  <div class="img-animation-code" #codeIcon>
+
+    <!-- Partículas / puntos flotantes decorativos -->
+    <div class="particle" #particle></div>
+    <div class="particle" #particle></div>
+    <div class="particle" #particle></div>
+    <div class="particle" #particle></div>
+    <div class="particle" #particle></div>
+
+    <!-- Anillo de brillo exterior -->
+    <div class="glow-ring" #glowRing></div>
+
+    <!-- Contenedor principal del icono -->
+    <div class="code-icon-wrapper" #iconWrapper>
+      <!-- SVG del icono </> -->
+      <svg class="code-svg" #codeSvg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" fill="none">
+        <!-- < -->
+        <path class="svg-bracket left-bracket" d="M55 15 L15 50 L55 85" stroke="url(#gradLeft)" stroke-width="8"
+          stroke-linecap="round" stroke-linejoin="round" />
+        <!-- / -->
+        <line class="svg-slash" x1="118" y1="10" x2="82" y2="90" stroke="url(#gradSlash)" stroke-width="8"
+          stroke-linecap="round" />
+        <!-- > -->
+        <path class="svg-bracket right-bracket" d="M145 15 L185 50 L145 85" stroke="url(#gradRight)" stroke-width="8"
+          stroke-linecap="round" stroke-linejoin="round" />
+
+        <!-- Gradientes -->
+        <defs>
+          <linearGradient id="gradLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#6C63FF" />
+            <stop offset="100%" stop-color="#00D2FC" />
+          </linearGradient>
+          <linearGradient id="gradSlash" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#00D2FC" />
+            <stop offset="100%" stop-color="#6C63FF" />
+          </linearGradient>
+          <linearGradient id="gradRight" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#6C63FF" />
+            <stop offset="100%" stop-color="#FF6584" />
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
   </div>
 
-  <div class="hero-buttons p-2">
-    <button (click)="scrollToSection($event, 'projects')" mat-flat-button class="m-1" style="border-radius: 10px; font-weight: bold;">Ver mis Proyectos</button>
-    <button (click)="scrollToSection($event, 'contact')" mat-stroked-button class="m-1" style="border-radius: 10px; font-weight: bold;">Contactar</button>
+  <div class="hero-title animate-slide-up">
+    <h1>Creando Experiencias Digitales</h1>
+    <span class="hero-subtitle">
+      Carlos Acevedo, desarrollador fullstack y entusiasta de la tecnología. Construyo aplicaciones limpias, eficientes
+      y centradas en el usuario, desde el concepto hasta el despliegue.
+    </span>
   </div>
 
-  <div class="hero-chips">
-    <mat-chip-set
-      cdkDropList
-      cdkDropListOrientation="horizontal">
+  <div class="hero-buttons animate-slide-up delay-100">
+    <button (click)="scrollToSection($event, 'projects')" mat-flat-button class="btn-primary">
+      Ver mis Proyectos
+    </button>
+    <button (click)="scrollToSection($event, 'contact')" mat-stroked-button class="btn-secondary">
+      Contactar
+    </button>
+  </div>
 
-      @for(tech of tecnologies; track tech.id){
-        <mat-chip cdkDrag>{{tech.name}}</mat-chip>
+  <div class="hero-chips animate-slide-up delay-200">
+    <mat-chip-set cdkDropList cdkDropListOrientation="horizontal">
+      @for(tech of tecnologies(); track tech.id){
+      <mat-chip cdkDrag>{{tech.name}}</mat-chip>
       }
     </mat-chip-set>
   </div>
 
-  <p style="color: grey; display: flex; flex-direction: column; align-items: center;">
+  <div class="scroll-indicator animate-fade-in delay-300">
     <span>Explorar mis proyectos</span>
     <mat-icon>arrow_downward</mat-icon>
-  </p>
+  </div>
 </div>
-
-
-

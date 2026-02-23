@@ -1,21 +1,51 @@
-<mat-toolbar style="font-size: 16px; font-weight: 500;">
-  <button mat-button style="font-size: 16px; border-radius: 10px;" (click)="scrollToSection($event, 'hero')">
+<mat-toolbar class="toolbar">
+  <button mat-button class="logo-btn" (click)="scrollToSection($event, 'hero')">
     <mat-icon>code</mat-icon>
-    <span style="font-weight: bold;">{{personalInfo.name}}</span>
+    <span>{{personalInfo().name}}</span>
   </button>
-  
+
   <span class="spacer"></span>
 
-  <button mat-button (click)="scrollToSection($event, 'hero')" style="margin-right: 1rem; border-radius: 10px;">Home</button>
-  <button mat-button (click)="scrollToSection($event, 'projects')" style="margin-right: 1rem; border-radius: 10px;">Proyectos</button>
-  <button mat-button (click)="scrollToSection($event, 'about')" style="margin-right: 1rem; border-radius: 10px;">Sobre mí</button>
-  <button mat-button (click)="scrollToSection($event, 'contact')" style="margin-right: 1rem; border-radius: 10px;">Contacto</button>
+  <!-- Desktop Navigation -->
+  <div class="nav-links">
+    <button mat-button class="nav-btn" (click)="scrollToSection($event, 'hero')">Home</button>
+    <button mat-button class="nav-btn" (click)="scrollToSection($event, 'projects')">Proyectos</button>
+    <button mat-button class="nav-btn" (click)="scrollToSection($event, 'about')">Sobre mí</button>
+    <button mat-button class="nav-btn" (click)="scrollToSection($event, 'contact')">Contacto</button>
+  </div>
 
-  <button (click)="goToGithub()" mat-mini-fab style="margin-right: 0.5rem;" aria-label="Example icon-button with heart icon">
-    <img ngSrc="img/logo-github.png" width="24" height="24" priority>
-  </button>
-  <button (click)="goToLinkedin()" mat-mini-fab style="margin-left: 0.5rem;" aria-label="Example icon-button with share icon">
-    <img ngSrc="img/logo-linkedin.png" width="24" height="24" priority>
-  </button>
+  <div class="ml-6 flex gap-3">
 
+    <button (click)="goToGithub()" mat-mini-fab class="social-btn" aria-label="GitHub">
+      <img ngSrc="img/logo-github.png" width="24" height="24" priority alt="GitHub">
+    </button>
+
+    <button (click)="goToLinkedin()" mat-mini-fab class="social-btn" aria-label="LinkedIn">
+      <img ngSrc="img/logo-linkedin.png" width="24" height="24" priority alt="LinkedIn">
+    </button>
+
+  </div>
+  
+
+  <!-- Mobile Menu Button -->
+  <button mat-icon-button class="mobile-menu-btn" (click)="toggleMenu()">
+    <mat-icon>{{ isMobileMenuOpen() ? 'close' : 'menu' }}</mat-icon>
+  </button>
 </mat-toolbar>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" [class.open]="isMobileMenuOpen()">
+  <button mat-button class="mobile-nav-btn" (click)="scrollToSection($event, 'hero')">Home</button>
+  <button mat-button class="mobile-nav-btn" (click)="scrollToSection($event, 'projects')">Proyectos</button>
+  <button mat-button class="mobile-nav-btn" (click)="scrollToSection($event, 'about')">Sobre mí</button>
+  <button mat-button class="mobile-nav-btn" (click)="scrollToSection($event, 'contact')">Contacto</button>
+
+  <div class="flex gap-3 mt-3">
+    <button (click)="goToGithub()" mat-mini-fab class="social-btn" aria-label="GitHub">
+      <img ngSrc="img/logo-github.png" width="24" height="24" priority alt="GitHub">
+    </button>
+    <button (click)="goToLinkedin()" mat-mini-fab class="social-btn" aria-label="LinkedIn">
+      <img ngSrc="img/logo-linkedin.png" width="24" height="24" priority alt="LinkedIn">
+    </button>
+  </div>
+</div>

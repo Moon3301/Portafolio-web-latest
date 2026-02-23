@@ -1,22 +1,70 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* --------------------------------------------- */
+/*                   IMPORTS                     */
+/* --------------------------------------------- */
+@import "styles/variables.css";
+@import "styles/animations.css";
+
+/* --------------------------------------------- */
 /*                   SWIPPER                     */
 /* --------------------------------------------- */
-@import "swiper/css";             /* núcleo */
-@import "swiper/css/navigation";  /* flechas */
-@import "swiper/css/pagination";  /* puntitos, opcional */
+@import "swiper/css";
+/* núcleo */
+@import "swiper/css/navigation";
+/* flechas */
+@import "swiper/css/pagination";
+/* puntitos, opcional */
 @import 'swiper/css/autoplay';
+
+/* --------------------------------------------- */
+/*                   SWIPER FIX                  */
+/* --------------------------------------------- */
+/* swiper-container is a Web Component (Custom Element).
+   It cannot be styled from component-scoped CSS.
+   These global rules prevent it from overflowing its parent. */
+swiper-container {
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
 
 /* --------------------------------------------- */
 /*                   HTML                        */
 /* --------------------------------------------- */
-html, body { height: 100%; }
+html,
+body {
+  height: 100%;
+}
+
 body {
   margin: 0;
-  font-family: "Space Grotesk", sans-serif;
-  background-color: #151515;
-  color: white;
+  font-family: var(--font-family-main);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--primary-color);
 }
 
 .flex-center {
@@ -31,13 +79,31 @@ body {
   align-items: center;
 }
 
-.border-test {
-  border: 1px solid white;
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
 }
 
 swiper-container::part(button-next),
 swiper-container::part(button-prev) {
-  color: white;
+  color: var(--primary-color);
 }
 
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
 
+::-webkit-scrollbar-track {
+  background: var(--surface-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
+}

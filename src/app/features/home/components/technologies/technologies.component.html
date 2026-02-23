@@ -1,33 +1,28 @@
 <div class="technologies-content">
 
   <div class="technologies-title">
-    <h2 style="font-size: 40px; margin: 0 auto; ">Tecnologías</h2>
-    <span style="color: grey; text-align: center;"> Tecnologías que utilizo para crear mis proyectos</span>
+    <h2 style="font-size: 40px; color: var(--primary-color);">Tecnologías</h2>
+    <span style="color: grey;"> Tecnologías que utilizo para crear mis proyectos</span>
   </div>
 
-  <div style="width: 57rem;">
-    <swiper-container
-      [slides-per-view]="2"
-      navigation="true"
-      [loop]="true"
-      [space-between]="spaceBetween"
-      [breakpoints]="swiperBreakpoints"
-      [free-mode]="true"
-    >
+  <div class="swiper-wrapper">
+    <swiper-container css-mode="true" [slides-per-view]="2" navigation="true" [breakpoints]="swiperBreakpoints"
+      mousewheel-force-to-axis="true" [loop]="true">
+      
       @for(tech of technologies; track tech.id){
-        <swiper-slide>
-          <div style="z-index: 1000;" matRipple>
-            <mat-card style="display: flex; justify-content: center; align-items: center; margin: 0.5rem;">
-              <img mat-card-image style="padding: 1rem; object-fit: contain;" [ngSrc]="tech.image" width="150" height="150" alt="" loading="lazy">
+        <swiper-slide matRipple>
+          <div >
+            <mat-card style="width: 250px; height: 250px; display: flex; justify-content: center; align-items: center;">
+              <img mat-card-image style="margin: 0 auto; padding: 1rem; object-fit: contain;" [ngSrc]="tech.image" width="150"
+                height="150" alt="" loading="lazy">
             </mat-card>
           </div>
         </swiper-slide>
       }
 
     </swiper-container>
+
   </div>
 
+
 </div>
-
-
-

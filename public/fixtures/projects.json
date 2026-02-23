@@ -5,7 +5,53 @@
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
         "image": "img/projects/logo-sala1.png",
         "link": "https://via.placeholder.com/150",
-        "technologies": ["Angular", "NestJS", "MariaDB"]
+        "technologies": [
+            "Angular", 
+            "NestJS", 
+            "MariaDB"
+        ],
+        "detail": {
+            "hero": {
+                "name": "SALA 1",
+                "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+                "image": "img/projects/logo-sala1.png"
+            },
+            "overview": [
+                {
+                    "title": "The Challenge",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+                },
+                {
+                    "title": "The Solution",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+                },
+                {
+                    "title": "The Impact",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+                }
+            ],
+            "gallery": [
+                "img/projects/logo-sala1.png",
+                "img/projects/logo-sala1.png",
+                "img/projects/logo-sala1.png"
+            ],
+            "technicalDeep": [
+                {
+                    "title": "The Challenge",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+                },
+                {
+                    "title": "The Solution",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+                },
+                {
+                    "title": "The Impact",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+                }
+            ]
+        },
+        "github": "https://github.com/",
+        "linkedin": "https://linkedin.com/"
     },
     {
         "id": 2,
@@ -17,10 +63,112 @@
             "Angular", 
             "NestJS", 
             "MariaDB"
-        ]
+        ],
+        "detail": {
+            "hero": {
+                "name": "QR CLEANER",
+                "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+                "image": "img/projects/qrc-1.png"
+            },
+            "overview":[
+                {
+                    "title": "The Challenge",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+                },
+                {
+                    "title": "The Solution",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+                },
+                {
+                    "title": "The Impact",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+                }
+            ],
+            "gallery": [
+                "img/projects/qrc-1.png",
+                "img/projects/qrc-2.png",
+                "img/projects/qrc-3.png",
+                "img/projects/qrc-4.png",
+                "img/projects/qrc-5.png",
+                "img/projects/qrc-6.png",
+                "img/projects/qrc-7.png",
+                "img/projects/qrc-8.png",
+                "img/projects/qrc-9.png"
+            ],
+            "technicalDeep": [
+                {
+                    "title": "The Challenge",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+                },
+                {
+                    "title": "The Solution",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+                },
+                {
+                    "title": "The Impact",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+                }
+            ]   
+        },
+        "github": "https://github.com/",
+        "linkedin": "https://linkedin.com/"
     },
     {
         "id": 3,
+        "name": "CHATBOT DR. SIMI",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+        "image": "img/projects/logo-salmonswim.png",
+        "link": "https://via.placeholder.com/150",
+        "technologies": [
+            "Angular", 
+            "NestJS", 
+            "MariaDB"
+        ],
+        "detail": {
+            "hero": {
+                "name": "SALMON SWIM",
+                "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+                "image": "img/projects/logo-salmonswim.png"
+            },
+            "gallery":[
+                "img/projects/logo-salmonswim.png",
+                "img/projects/logo-salmonswim.png",
+                "img/projects/logo-salmonswim.png"
+            ],
+            "overview":[
+                {
+                    "title": "The Challenge",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+                },
+                {
+                    "title": "The Solution",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+                },
+                {
+                    "title": "The Impact",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+                }
+            ],
+            "technicalDeep":[
+                {
+                    "title": "The Challenge",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+                },
+                {
+                    "title": "The Solution",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+                },
+                {
+                    "title": "The Impact",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+                }
+            ]
+        },
+        "github": "https://github.com/",
+        "linkedin": "https://linkedin.com/"
+    },
+    {
+        "id": 4,
         "name": "SALMON SWIM",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
         "image": "img/projects/logo-salmonswim.png",
@@ -29,19 +177,49 @@
             "Angular", 
             "NestJS", 
             "MariaDB"
-        ]
-    },
-    {
-        "id": 4,
-        "name": "SALA 1",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-        "image": "img/projects/logo-sala1.png",
-        "link": "https://via.placeholder.com/150",
-        "technologies": [
-            "Angular", 
-            "NestJS", 
-            "MariaDB"
-        ]
+        ],
+        "detail": {
+            "hero": {
+                "name": "SALMON SWIM",
+                "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+                "image": "img/projects/logo-salmonswim.png"
+            },
+            "gallery":[
+                "img/projects/logo-salmonswim.png",
+                "img/projects/logo-salmonswim.png",
+                "img/projects/logo-salmonswim.png"
+            ],
+            "overview":[
+                {
+                    "title": "The Challenge",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+                },
+                {
+                    "title": "The Solution",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+                },
+                {
+                    "title": "The Impact",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+                }
+            ],
+            "technicalDeep":[
+                {
+                    "title": "The Challenge",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+                },
+                {
+                    "title": "The Solution",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+                },
+                {
+                    "title": "The Impact",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+                }
+            ]
+        },
+        "github": "https://github.com/",
+        "linkedin": "https://linkedin.com/"
     },
     {
         "id": 5,
@@ -53,7 +231,49 @@
             "Angular", 
             "NestJS", 
             "MariaDB"
-        ]
+        ],
+        "detail": {
+            "hero": {
+                "name": "SALA 1",
+                "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+                "image": "img/projects/logo-sala1.png"
+            },
+            "gallery":[
+                "img/projects/logo-salmonswim.png",
+                "img/projects/logo-salmonswim.png",
+                "img/projects/logo-salmonswim.png"
+            ],
+            "overview":[
+                {
+                    "title": "The Challenge",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+                },
+                {
+                    "title": "The Solution",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+                },
+                {
+                    "title": "The Impact",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+                }
+            ],
+            "technicalDeep":[
+                {
+                    "title": "The Challenge",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+                },
+                {
+                    "title": "The Solution",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+                },
+                {
+                    "title": "The Impact",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+                }
+            ]
+        },
+        "github": "https://github.com/",
+        "linkedin": "https://linkedin.com/"
     },
     {
         "id": 6,
@@ -65,6 +285,48 @@
             "Angular", 
             "NestJS", 
             "MariaDB"
-        ]
+        ],
+        "detail": {
+            "hero": {
+                "name": "SALA 1",
+                "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+                "image": "img/projects/logo-sala1.png"
+            },
+            "gallery":[
+                "img/projects/logo-salmonswim.png",
+                "img/projects/logo-salmonswim.png",
+                "img/projects/logo-salmonswim.png"
+            ],
+            "overview":[
+                {
+                    "title": "The Challenge",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+                },
+                {
+                    "title": "The Solution",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+                },
+                {
+                    "title": "The Impact",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+                }
+            ],
+            "technicalDeep":[
+                {
+                    "title": "The Challenge",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+                },
+                {
+                    "title": "The Solution",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+                },
+                {
+                    "title": "The Impact",
+                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+                }
+            ]
+        },
+        "github": "https://github.com/",
+        "linkedin": "https://linkedin.com/"
     }
 ]
